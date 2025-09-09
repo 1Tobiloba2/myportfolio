@@ -1,11 +1,3 @@
-/* Template Name: Dennis - Tailwind CSS Personal Portfolio Template
-   Author: Shreethemes
-   Email: support@shreethemes.in
-   Website: https://shreethemes.in
-   Version: 1.0.0
-   Created: March 2022
-   File Description: Main JS file of the template
-*/
 
 
 /*********************************/
@@ -61,6 +53,7 @@ try {
 }
 
 
+
 // Smooth scroll 
 try {
     var scroll = new SmoothScroll('#navbar-navlist a', {
@@ -82,7 +75,7 @@ const toggleCollapse = (elementId, show = true) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Toggle target elements using [data-collapse]
+    // Existing collapse toggle logic
     document.querySelectorAll('[data-collapse]').forEach(function (collapseToggleEl) {
         var collapseId = collapseToggleEl.getAttribute('data-collapse');
 
@@ -90,9 +83,24 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleCollapse(collapseId, document.getElementById(collapseId).classList.contains('hidden'));
         });
     });
-});
 
-window.toggleCollapse = toggleCollapse;
+    // 👇 New logic: close the menu when a nav link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    const collapseToggleEl = document.querySelector('[data-collapse]');
+    const collapseId = collapseToggleEl?.getAttribute('data-collapse');
+
+    if (collapseId) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Collapse only if the menu is open
+                const menu = document.getElementById(collapseId);
+                if (!menu.classList.contains('hidden')) {
+                    toggleCollapse(collapseId, false); // false = hide it
+                }
+            });
+        });
+    }
+});
 
 /*********************/
 /*    Back To TOp    */
