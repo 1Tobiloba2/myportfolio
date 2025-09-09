@@ -7,18 +7,19 @@
  *     02.  Menus                *
  *     03.  Back to top          *
  ================================*/
- window.addEventListener('load', fn, false)
 
- //  window.onload = function loader() {
- function fn() {
-     // Preloader
-     if (document.getElementById('preloader')) {
-         setTimeout(() => {
-             document.getElementById('preloader').style.visibility = 'hidden';
-             document.getElementById('preloader').style.opacity = '0';
-         }, 350);
-     }
- }
+  window.addEventListener('load', function () {
+    const loader = document.getElementById('loader');
+    const content = document.getElementById('main-content');
+
+    // Wait 2 seconds before showing the content
+    setTimeout(() => {
+      loader.style.display = 'none';
+      content.style.display = 'block';
+    }, 1000); // 2000ms = 2 seconds
+  });
+
+
 /*********************/
 /*     Menus         */
 /*********************/

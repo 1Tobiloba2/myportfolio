@@ -29,20 +29,86 @@
     
     <body class="font-poppins text-base text-slate-900 dark:text-white bg-white dark:bg-slate-900">
 
-        <!-- Loader Start -->
-        <!-- <div id="preloader">
-            <div id="status">
-                 <div class="logo">
-                    <img src="assets/images/logo-icon-64.png" class="d-block mx-auto animate-[spin_10s_linear_infinite]" alt="">
-                </div> 
-                <div class="justify-content-center">
-                    <div class="text-center">
-                        <h4 class="mb-0 mt-2 text-lg font-semibold">Dennis</h4>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Loader End -->
+        <!-- Loader Start  -->
+
+   <!-- Loader -->
+<div id="loader">
+  <div class="loader"></div>
+</div>
+
+
+<style>
+    /* Fullscreen loader container */
+#loader {
+  position: fixed;
+  z-index: 9999;
+  background-color:rgb(58, 44, 8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Your custom animated loader */
+/* Fullscreen loader wrapper */
+#loader {
+  position: fixed;
+  z-index: 9999;
+  background-color: rgb(58, 44, 8); /* Match your site's background */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Your custom loader */
+.loader {
+  width: 80px;
+  height: 40px;
+  color: #000;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  padding: 3px;
+  background: 
+    repeating-linear-gradient(90deg, currentColor 0 10px, #0000 0 15px)
+    0/0% no-repeat content-box content-box;
+  position: relative;
+  box-sizing: border-box;
+  animation: l5 2s infinite steps(6);
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: 100%;
+  width: 10px;
+  background:
+    linear-gradient(
+        #0000 calc(50% - 7px), currentColor 0 calc(50% - 5px),
+        #0000 0 calc(50% + 5px), currentColor 0 calc(50% + 7px), #0000 0) left / 100% 100%,
+    linear-gradient(currentColor calc(50% - 5px), #0000 0 calc(50% + 5px), currentColor 0) left / 2px 100%,
+    linear-gradient(#0000 calc(50% - 5px), currentColor 0 calc(50% + 5px), #0000 0) right / 2px 100%;
+  background-repeat: no-repeat;
+}
+
+@keyframes l5 {
+  100% {
+    background-size: 120%;
+  }
+}
+
+
+</style>
+       
+     <!-- Loader End -->
+
+
+
+
 
         
         
